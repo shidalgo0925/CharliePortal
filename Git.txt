@@ -1,0 +1,12 @@
+
+$ py -m venv venv
+
+cd "C:\Users\shida\Documents\1. Easy_Tech_Services\18.CharliePortal"
+source venv/Scripts/activate
+
+git init
+git remote add origin https://github.com/shidalgo0925/CharliePortal.git
+git add .
+git commit -m "Versión inicial CharliePortal"
+git branch -M main
+git push -u origin main

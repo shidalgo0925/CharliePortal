@@ -1,7 +1,19 @@
-
 {% extends 'base.html' %}
+
 {% block content %}
-<h2 class="text-3xl font-semibold mb-4">Bienvenido a Charlie Pity</h2>
-<p class="mb-6">Tu asistente profesional especializado en Odoo, siempre listo para ayudarte.</p>
-<img src="{{ url_for('static', filename='img/CharliePity.png') }}" alt="Charlie Pity" class="w-64 mx-auto rounded-lg shadow-lg">
+<div class="text-center py-12">
+  <h2 class="text-3xl font-semibold mb-4">Bienvenido a Charlie Pity</h2>
+  <p class="mb-6">Tu asistente profesional especializado en Odoo, siempre listo para ayudarte.</p>
+  <img src="{{ url_for('static', filename='img/CharliePity.png') }}" alt="Charlie Pity" class="w-64 mx-auto rounded-lg shadow-lg mb-8">
+
+  <div class="w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg">
+    <iframe
+      src="https://chat.easytech.services/"  <!-- ← usa aquí la URL correcta de tu chat IA -->
+      title="Charlie Pity Chat"
+      class="w-full h-[600px] border-0"
+      loading="lazy"
+      allow="clipboard-write; autoplay"
+    ></iframe>
+  </div>
+</div>
 {% endblock %}
