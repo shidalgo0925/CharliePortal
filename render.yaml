@@ -1,0 +1,9 @@
+
+services:
+  - type: web
+    name: charlie-portal
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    autoDeploy: true

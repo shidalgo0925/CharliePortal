@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} | Charlie Pity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <header class="bg-gray-800 shadow">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="{{ url_for('static', filename='img/EasyTech_Logo.png') }}" alt="EasyTech" class="h-10">
+                <h1 class="text-xl font-bold">Charlie Pity Portal</h1>
+            </div>
+            <nav class="space-x-4">
+                <a href="{{ url_for('index') }}" class="hover:text-yellow-300">Inicio</a>
+                <a href="{{ url_for('about') }}" class="hover:text-yellow-300">¿Quién soy?</a>
+                <a href="{{ url_for('chat') }}" class="hover:text-yellow-300">Chat</a>
+                <a href="{{ url_for('faq') }}" class="hover:text-yellow-300">FAQ</a>
+                <a href="{{ url_for('contact') }}" class="hover:text-yellow-300">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="p-6 max-w-5xl mx-auto">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-gray-800 text-center text-sm py-4 mt-10 text-gray-400">
+        © 2025 Easy Tech Services | WhatsApp: +507 6769-6539 | contacto@easytech.services
+    </footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+ssh -i ~/.ssh/nueva-odoo-key easytechservices25@34.9.106.4
+#-------------------------------------
+usuario admin de Odoo
+#-------------------------------------
+usuario shidalgo0925@gmail.com
+pass Mariachi@0925
+
+# reiniciar el servicio 
+sudo systemctl restart odoo18.service
+sudo systemctl stop odoo18.service
+
+34.9.106.4:8069
+#-------------------------------------------------------------
+Cargar tema
+
+mkdir muk
+mv ~/muk_web_theme-18.0.1.2.4.zip /opt/odoo-18/custom-addons/muk
+cd /opt/odoo-18/custom-addons/
+unzip muk_web_theme-18.0.1.2.4.zip
+
+
+cd "C:\Users\shida\Documents\1. Easy_Tech_Services\18.CharliePortal"
+source venv/bin/activate
+
+sudo systemctl stop odoo18
+/opt/odoo-18/venv/bin/python3 /opt/odoo-18/odoo-bin -c /etc/odoo18.conf -d odoo18 -u muk_web_theme --stop-after-init
+sudo systemctl start odoo18
+
+cd /opt/odoo-18
+source venv/bin/activate
+./odoo-bin shell -c /etc/odoo18.conf -d odoo18
+
+34.9.106.4/web/database/manager
+http://34.9.106.4:8069/web/database/manager
+http://34.9.106.4:8069/web/database/selector
+
+sudo cp /ruta/donde/se/guarda/la/imagen/nueva.png /var/www/html/promo/
+odoo_todo
+scp -i ~/.ssh/nueva-odoo-key C:\red\odoo_todo.png easytechservices25@34.9.106.4:/tmp/
+
+
+cd /ruta/a/tu/odoo/custom-addons
+mkdir carga_factura_automatizada
+cd carga_factura_automatizada
+mkdir models wizard data report
+touch __init__.py __manifest__.py models/__init__.py wizard/__init__.py
+
+Instala los modulos base
+/home/easytechservices25/scripts/install_base_modules.sh
+
+sudo -u postgres psql -d lahuaca
+
+baja los servcios innecesarios 
+sudo systemctl disable --now gdm upower switcheroo-control ModemManager rtkit-daemon avahi-daemon snap.cups.cupsd.service snap.cups.cups-browsed.service
+
+sube todos los q estaba usando
+sudo systemctl enable --now gdm upower switcheroo-control ModemManager rtkit-daemon avahi-daemon snap.cups.cupsd.service snap.cups.cups-browsed.service
+
