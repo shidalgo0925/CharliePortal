@@ -24,6 +24,12 @@ def faq():
 def contact():
     return render_template('contact.html', title="Contacto")
 
+# 🔧 ESTA ES LA CLAVE: permitir que otros sitios usen este como iframe
+@app.after_request
+def disable_frame_protection(response: Response):
+    response.headers['X-Frame-Options'] = 'ALLOWALL'
+    return response
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
