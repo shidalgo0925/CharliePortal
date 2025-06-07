@@ -1,6 +1,5 @@
 import os
-
-from flask import Flask, render_template
+from flask import Flask, render_template, Response  # Asegúrate de tener Response aquí
 
 app = Flask(__name__)
 
@@ -24,9 +23,9 @@ def faq():
 def contact():
     return render_template('contact.html', title="Contacto")
 
-# 🔧 ESTA ES LA CLAVE: permitir que otros sitios usen este como iframe
+# ✅ FIX: permitir iframe embebido
 @app.after_request
-def disable_frame_protection(response: Response):
+def add_header(response):
     response.headers['X-Frame-Options'] = 'ALLOWALL'
     return response
 
